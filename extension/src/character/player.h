@@ -15,7 +15,8 @@ class Player : public CharacterBody2D {
   Player();
   ~Player();
 
-  void _process(double delta);
+  void _physics_process(double delta);
+  void _input(InputEvent *inputEvent);
 };
 
 #endif
