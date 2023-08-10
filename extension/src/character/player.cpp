@@ -11,20 +11,30 @@ using namespace godot;
 
 void Player::_bind_methods() {}
 
-Player::Player() {}
+Player::Player() {
+  speed = 6000.0f;
+  velocity = Vector2();
+}
 
 Player::~Player() {}
 
 void Player::_physics_process(double delta) {
+  velocity = Vector2(0.0f, 0.0f);
   Input& inputSingleton = *Input::get_singleton();
   if (inputSingleton.is_key_pressed(KEY_RIGHT)) {
+    velocity.x = 1 * speed;
   }
   if (inputSingleton.is_key_pressed(KEY_LEFT)) {
+    velocity.x = -1 * speed;
   }
   if (inputSingleton.is_key_pressed(KEY_UP)) {
+    velocity.y = -1 * speed;
   }
   if (inputSingleton.is_key_pressed(KEY_DOWN)) {
+    velocity.y = 1 * speed;
   }
+  set_velocity(velocity * delta);
+  move_and_slide();
 }
 
 /**

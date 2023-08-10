@@ -8,6 +8,9 @@ using namespace godot;
 class Player : public CharacterBody2D {
   GDCLASS(Player, CharacterBody2D)
 
+  Vector2 velocity;
+  float speed;
+
  protected:
   static void _bind_methods();
 
