@@ -1,10 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://qe8fxyc1qbse"]
+[gd_scene load_steps=6 format=3 uid="uid://qe8fxyc1qbse"]
 
-[ext_resource type="Texture2D" uid="uid://cx1mscuegq1lo" path="res://icon.png" id="1_kshkg"]
+[ext_resource type="Texture2D" uid="uid://ctu0atnvwiilr" path="res://image/ghost.png" id="1_xwp1j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iva3j"]
+atlas = ExtResource("1_xwp1j")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lms2k"]
+atlas = ExtResource("1_xwp1j")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2hjq"]
+atlas = ExtResource("1_xwp1j")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gjykr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iva3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lms2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2hjq")
+}],
+"loop": true,
+"name": &"run",
+"speed": 1.0
+}]
 
 [node name="Player" type="Player"]
-position = Vector2(385, 464.999)
+position = Vector2(428.334, 464.999)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_kshkg")
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("1_xwp1j")
+hframes = 6
+frame = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_gjykr")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.56321
