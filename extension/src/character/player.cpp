@@ -19,10 +19,7 @@ Player::Player() {
 
 Player::~Player() {}
 
-void Player::_ready() {
-  image = get_node<Sprite2D>(NodePath("Image"));
-  _animatedSprite2d = get_node<Sprite2D>(NodePath("Image"));
-}
+void Player::_ready() {}
 
 void Player::_physics_process(double delta) {
   velocity = Vector2(0.0f, 0.0f);

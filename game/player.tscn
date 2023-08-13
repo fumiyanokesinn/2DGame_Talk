@@ -27,24 +27,16 @@ animations = [{
 "texture": SubResource("AtlasTexture_t2hjq")
 }],
 "loop": true,
-"name": &"run",
+"name": &"LeftRun",
 "speed": 1.0
 }]
 
 [node name="Player" type="Player"]
-position = Vector2(428.334, 464.999)
+position = Vector2(256.667, 446)
 metadata/_edit_group_ = true
 
-[node name="Image" type="Sprite2D" parent="."]
-position = Vector2(1, 0)
-scale = Vector2(3, 3)
-texture = ExtResource("1_xwp1j")
-hframes = 6
-frame = 1
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(3, 3)
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_gjykr")
-animation = &"run"
-autoplay = "run"
-frame_progress = 0.56321
+animation = &"LeftRun"
+speed_scale = 5.0
