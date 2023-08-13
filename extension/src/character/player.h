@@ -12,7 +12,7 @@ class Player : public CharacterBody2D {
 
   Vector2 velocity;
   float speed;
-  NodePath imagePath = NodePath("Image");
+  NodePath animatedSprite2DPath = NodePath("AnimatedSprite2D");
 
  private:
   Sprite2D image;

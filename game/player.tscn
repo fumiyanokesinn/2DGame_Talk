@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://qe8fxyc1qbse"]
+[gd_scene load_steps=9 format=3 uid="uid://qe8fxyc1qbse"]
 
 [ext_resource type="Texture2D" uid="uid://ctu0atnvwiilr" path="res://image/ghost.png" id="1_xwp1j"]
 
@@ -13,6 +13,18 @@ region = Rect2(32, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2hjq"]
 atlas = ExtResource("1_xwp1j")
 region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gjvp"]
+atlas = ExtResource("1_xwp1j")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bievr"]
+atlas = ExtResource("1_xwp1j")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erl26"]
+atlas = ExtResource("1_xwp1j")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gjykr"]
 animations = [{
@@ -29,6 +41,20 @@ animations = [{
 "loop": true,
 "name": &"LeftRun",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gjvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bievr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erl26")
+}],
+"loop": true,
+"name": &"RightRun",
+"speed": 1.0
 }]
 
 [node name="Player" type="Player"]
@@ -39,4 +65,4 @@ metadata/_edit_group_ = true
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_gjykr")
 animation = &"LeftRun"
-speed_scale = 5.0
+speed_scale = 7.0

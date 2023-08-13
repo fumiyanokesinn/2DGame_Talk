@@ -26,9 +26,11 @@ void Player::_physics_process(double delta) {
   Input& inputSingleton = *Input::get_singleton();
   if (inputSingleton.is_key_pressed(KEY_RIGHT)) {
     velocity.x = 1 * speed;
+    get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("RightRun");
   }
   if (inputSingleton.is_key_pressed(KEY_LEFT)) {
     velocity.x = -1 * speed;
+    get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("LeftRun");
   }
   if (inputSingleton.is_key_pressed(KEY_UP)) {
     velocity.y = -1 * speed;
@@ -36,6 +38,11 @@ void Player::_physics_process(double delta) {
   if (inputSingleton.is_key_pressed(KEY_DOWN)) {
     velocity.y = 1 * speed;
   }
+
+  if (velocity == Vector2(0.0f, 0.0f)) {
+    get_node<AnimatedSprite2D>(animatedSprite2DPath)->stop();
+  }
+
   set_velocity(velocity * delta);
   move_and_slide();
 }
