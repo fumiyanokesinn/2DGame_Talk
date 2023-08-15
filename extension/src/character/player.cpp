@@ -21,31 +21,7 @@ Player::~Player() {}
 
 void Player::_ready() {}
 
-void Player::_physics_process(double delta) {
-  velocity = Vector2(0.0f, 0.0f);
-  Input& inputSingleton = *Input::get_singleton();
-  if (inputSingleton.is_key_pressed(KEY_RIGHT)) {
-    velocity.x = 1 * speed;
-    get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("RightRun");
-  }
-  if (inputSingleton.is_key_pressed(KEY_LEFT)) {
-    velocity.x = -1 * speed;
-    get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("LeftRun");
-  }
-  if (inputSingleton.is_key_pressed(KEY_UP)) {
-    velocity.y = -1 * speed;
-  }
-  if (inputSingleton.is_key_pressed(KEY_DOWN)) {
-    velocity.y = 1 * speed;
-  }
-
-  if (velocity == Vector2(0.0f, 0.0f)) {
-    get_node<AnimatedSprite2D>(animatedSprite2DPath)->stop();
-  }
-
-  set_velocity(velocity * delta);
-  move_and_slide();
-}
+void Player::_physics_process(double delta) { playerMove(delta); }
 
 /**
  * プレイヤーの操作
@@ -66,6 +42,42 @@ void Player::_input(InputEvent* inputEvent) {
   //     UtilityFunctions::print("Move_Down");
   //   }
   // }
+}
+
+/**
+ * プレイヤーの移動とアニメーション
+ */
+void Player::playerMove(double delta) {
+  velocity = Vector2(0.0f, 0.0f);
+  Input& inputSingleton = *Input::get_singleton();
+  if (inputSingleton.is_key_pressed(KEY_RIGHT)) {
+    direction = DIRECTION_RIGHT;
+    velocity.x = 1 * speed;
+    get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("RightRun");
+  }
+  if (inputSingleton.is_key_pressed(KEY_LEFT)) {
+    direction = DIRECTION_LEFT;
+    velocity.x = -1 * speed;
+    get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("LeftRun");
+  }
+  if (inputSingleton.is_key_pressed(KEY_UP)) {
+    velocity.y = -1 * speed;
+  }
+  if (inputSingleton.is_key_pressed(KEY_DOWN)) {
+    velocity.y = 1 * speed;
+  }
+
+  if (velocity == Vector2(0.0f, 0.0f)) {
+    if (direction == DIRECTION_LEFT) {
+      get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("LeftWeight");
+    }
+    if (direction == DIRECTION_RIGHT) {
+      get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("RightWeight");
+    }
+  }
+
+  set_velocity(velocity * delta);
+  move_and_slide();
 }
 
 #pragma clang diagnostic pop

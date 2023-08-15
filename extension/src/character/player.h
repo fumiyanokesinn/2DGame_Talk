@@ -17,6 +17,9 @@ class Player : public CharacterBody2D {
  private:
   Sprite2D image;
   AnimatedSprite2D _animatedSprite2d;
+  String const DIRECTION_LEFT = "LEFT";
+  String const DIRECTION_RIGHT = "RIGHT";
+  String direction = DIRECTION_RIGHT;
 
  protected:
   static void _bind_methods();
@@ -28,6 +31,7 @@ class Player : public CharacterBody2D {
   void _ready();
   void _physics_process(double delta);
   void _input(InputEvent *inputEvent);
+  void playerMove(double delta);
 };
 
 #endif
