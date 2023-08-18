@@ -61,10 +61,14 @@ void Player::playerMove(double delta) {
     get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("LeftRun");
   }
   if (inputSingleton.is_key_pressed(KEY_UP)) {
+    direction = DIRECTION_BACK;
     velocity.y = -1 * speed;
+    get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("BackRun");
   }
   if (inputSingleton.is_key_pressed(KEY_DOWN)) {
+    direction = DIRECTION_FRONT;
     velocity.y = 1 * speed;
+    get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("FrontRun");
   }
 
   if (velocity == Vector2(0.0f, 0.0f)) {
@@ -73,6 +77,12 @@ void Player::playerMove(double delta) {
     }
     if (direction == DIRECTION_RIGHT) {
       get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("RightWeight");
+    }
+    if (direction == DIRECTION_BACK) {
+      get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("BackWeight");
+    }
+    if (direction == DIRECTION_FRONT) {
+      get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("FrontWeight");
     }
   }
 

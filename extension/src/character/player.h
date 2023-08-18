@@ -19,6 +19,8 @@ class Player : public CharacterBody2D {
   AnimatedSprite2D _animatedSprite2d;
   String const DIRECTION_LEFT = "LEFT";
   String const DIRECTION_RIGHT = "RIGHT";
+  String const DIRECTION_FRONT = "FRONT";
+  String const DIRECTION_BACK = "BACK";
   String direction = DIRECTION_RIGHT;
 
  protected:
