@@ -51,27 +51,90 @@ void Player::_input(InputEvent* inputEvent) {
 void Player::playerMove(double delta) {
   velocity = Vector2(0.0f, 0.0f);
   Input& inputSingleton = *Input::get_singleton();
-  if (inputSingleton.is_key_pressed(KEY_RIGHT)) {
+  // 移動時のアニメーションとベクトル
+  if (inputSingleton.is_key_pressed(KEY_RIGHT) &&
+      !inputSingleton.is_key_pressed(KEY_LEFT) &&
+      !inputSingleton.is_key_pressed(KEY_UP) &&
+      !inputSingleton.is_key_pressed(KEY_DOWN)) {
     direction = DIRECTION_RIGHT;
     velocity.x = 1 * speed;
     _animatedSprite2d->play("RightRun");
   }
-  if (inputSingleton.is_key_pressed(KEY_LEFT)) {
+  if (inputSingleton.is_key_pressed(KEY_LEFT) &&
+      !inputSingleton.is_key_pressed(KEY_RIGHT) &&
+      !inputSingleton.is_key_pressed(KEY_UP) &&
+      !inputSingleton.is_key_pressed(KEY_DOWN)) {
     direction = DIRECTION_LEFT;
     velocity.x = -1 * speed;
     _animatedSprite2d->play("LeftRun");
   }
-  if (inputSingleton.is_key_pressed(KEY_UP)) {
+  if (inputSingleton.is_key_pressed(KEY_UP) &&
+      !inputSingleton.is_key_pressed(KEY_DOWN) &&
+      !inputSingleton.is_key_pressed(KEY_LEFT) &&
+      !inputSingleton.is_key_pressed(KEY_RIGHT)) {
     direction = DIRECTION_BACK;
     velocity.y = -1 * speed;
     _animatedSprite2d->play("BackRun");
   }
-  if (inputSingleton.is_key_pressed(KEY_DOWN)) {
+  if (inputSingleton.is_key_pressed(KEY_DOWN) &&
+      !inputSingleton.is_key_pressed(KEY_UP) &&
+      !inputSingleton.is_key_pressed(KEY_LEFT) &&
+      !inputSingleton.is_key_pressed(KEY_RIGHT)) {
     direction = DIRECTION_FRONT;
     velocity.y = 1 * speed;
     _animatedSprite2d->play("FrontRun");
   }
+  // 斜め移動
+  if (inputSingleton.is_key_pressed(KEY_DOWN) &&
+      inputSingleton.is_key_pressed(KEY_LEFT) &&
+      !inputSingleton.is_key_pressed(KEY_UP) &&
+      !inputSingleton.is_key_pressed(KEY_RIGHT)) {
+    velocity.y = 1 * speed;
+    velocity.x = -1 * speed;
+    if (direction == DIRECTION_BACK) {
+      _animatedSprite2d->play("BackRun");
+    } else if (direction == DIRECTION_LEFT) {
+      _animatedSprite2d->play("LeftRun");
+    }
+  }
+  if (inputSingleton.is_key_pressed(KEY_DOWN) &&
+      inputSingleton.is_key_pressed(KEY_RIGHT) &&
+      !inputSingleton.is_key_pressed(KEY_LEFT) &&
+      !inputSingleton.is_key_pressed(KEY_UP)) {
+    velocity.y = 1 * speed;
+    velocity.x = 1 * speed;
+    if (direction == DIRECTION_BACK) {
+      _animatedSprite2d->play("BackRun");
+    } else if (direction == DIRECTION_RIGHT) {
+      _animatedSprite2d->play("RightRun");
+    }
+  }
+  if (inputSingleton.is_key_pressed(KEY_UP) &&
+      inputSingleton.is_key_pressed(KEY_LEFT) &&
+      !inputSingleton.is_key_pressed(KEY_DOWN) &&
+      !inputSingleton.is_key_pressed(KEY_RIGHT)) {
+    velocity.y = -1 * speed;
+    velocity.x = -1 * speed;
+    if (direction == DIRECTION_FRONT) {
+      _animatedSprite2d->play("FrontRun");
+    } else if (direction == DIRECTION_LEFT) {
+      _animatedSprite2d->play("LeftRun");
+    }
+  }
+  if (inputSingleton.is_key_pressed(KEY_UP) &&
+      inputSingleton.is_key_pressed(KEY_RIGHT) &&
+      !inputSingleton.is_key_pressed(KEY_LEFT) &&
+      !inputSingleton.is_key_pressed(KEY_DOWN)) {
+    velocity.y = -1 * speed;
+    velocity.x = 1 * speed;
+    if (direction == DIRECTION_FRONT) {
+      _animatedSprite2d->play("FrontRun");
+    } else if (direction == DIRECTION_RIGHT) {
+      _animatedSprite2d->play("RightRun");
+    }
+  }
 
+  // 停止時のアニメーション
   if (velocity == Vector2(0.0f, 0.0f)) {
     if (direction == DIRECTION_LEFT) {
       _animatedSprite2d->play("LeftWeight");
