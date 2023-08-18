@@ -14,12 +14,13 @@ void Player::_bind_methods() {}
 Player::Player() {
   speed = 6000.0f;
   velocity = Vector2();
-  image;
 }
 
 Player::~Player() {}
 
-void Player::_ready() {}
+void Player::_ready() {
+  _animatedSprite2d = get_node<AnimatedSprite2D>(ANIMATED_SPRITE_2D_PATH);
+}
 
 void Player::_physics_process(double delta) { playerMove(delta); }
 
@@ -53,36 +54,36 @@ void Player::playerMove(double delta) {
   if (inputSingleton.is_key_pressed(KEY_RIGHT)) {
     direction = DIRECTION_RIGHT;
     velocity.x = 1 * speed;
-    get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("RightRun");
+    _animatedSprite2d->play("RightRun");
   }
   if (inputSingleton.is_key_pressed(KEY_LEFT)) {
     direction = DIRECTION_LEFT;
     velocity.x = -1 * speed;
-    get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("LeftRun");
+    _animatedSprite2d->play("LeftRun");
   }
   if (inputSingleton.is_key_pressed(KEY_UP)) {
     direction = DIRECTION_BACK;
     velocity.y = -1 * speed;
-    get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("BackRun");
+    _animatedSprite2d->play("BackRun");
   }
   if (inputSingleton.is_key_pressed(KEY_DOWN)) {
     direction = DIRECTION_FRONT;
     velocity.y = 1 * speed;
-    get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("FrontRun");
+    _animatedSprite2d->play("FrontRun");
   }
 
   if (velocity == Vector2(0.0f, 0.0f)) {
     if (direction == DIRECTION_LEFT) {
-      get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("LeftWeight");
+      _animatedSprite2d->play("LeftWeight");
     }
     if (direction == DIRECTION_RIGHT) {
-      get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("RightWeight");
+      _animatedSprite2d->play("RightWeight");
     }
     if (direction == DIRECTION_BACK) {
-      get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("BackWeight");
+      _animatedSprite2d->play("BackWeight");
     }
     if (direction == DIRECTION_FRONT) {
-      get_node<AnimatedSprite2D>(animatedSprite2DPath)->play("FrontWeight");
+      _animatedSprite2d->play("FrontWeight");
     }
   }
 

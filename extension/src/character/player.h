@@ -10,17 +10,18 @@ using namespace godot;
 class Player : public CharacterBody2D {
   GDCLASS(Player, CharacterBody2D)
 
+  const NodePath ANIMATED_SPRITE_2D_PATH = NodePath("AnimatedSprite2D");
+  const String DIRECTION_LEFT = "LEFT";
+  const String DIRECTION_RIGHT = "RIGHT";
+  const String DIRECTION_FRONT = "FRONT";
+  const String DIRECTION_BACK = "BACK";
+
   Vector2 velocity;
   float speed;
-  NodePath animatedSprite2DPath = NodePath("AnimatedSprite2D");
 
  private:
-  Sprite2D image;
-  AnimatedSprite2D _animatedSprite2d;
-  String const DIRECTION_LEFT = "LEFT";
-  String const DIRECTION_RIGHT = "RIGHT";
-  String const DIRECTION_FRONT = "FRONT";
-  String const DIRECTION_BACK = "BACK";
+  AnimatedSprite2D* _animatedSprite2d;
+
   String direction = DIRECTION_RIGHT;
 
  protected:
@@ -32,7 +33,7 @@ class Player : public CharacterBody2D {
 
   void _ready();
   void _physics_process(double delta);
-  void _input(InputEvent *inputEvent);
+  void _input(InputEvent* inputEvent);
   void playerMove(double delta);
 };
 

@@ -3,12 +3,12 @@
 [ext_resource type="SpriteFrames" uid="uid://bkk8hys00jdu5" path="res://animation/player_walk.tres" id="1_nwka1"]
 
 [node name="Player" type="Player"]
-position = Vector2(467, 476)
+position = Vector2(472, 476)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(5, 5)
 sprite_frames = ExtResource("1_nwka1")
 animation = &"RightWeight"
-frame_progress = 0.38602
+frame_progress = 0.919367
 speed_scale = 7.0
