@@ -10,5 +10,5 @@ metadata/_edit_group_ = true
 scale = Vector2(5, 5)
 sprite_frames = ExtResource("1_nwka1")
 animation = &"RightWeight"
-frame_progress = 0.615433
+frame_progress = 0.577065
 speed_scale = 7.0
