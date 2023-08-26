@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgm4ah3j8jxke"]
+[gd_scene load_steps=3 format=3 uid="uid://cdfl83kulf43x"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_ptcg0"]
-[ext_resource type="Texture2D" uid="uid://cx1mscuegq1lo" path="res://icon.png" id="2_6yts2"]
+[ext_resource type="Texture2D" uid="uid://cx1mscuegq1lo" path="res://tileSet/icon.png" id="2_anr5o"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ptcg0")
 
 [node name="GDE_Sprite2D" type="GDE_Sprite2D" parent="."]
-position = Vector2(99.421, 606.757)
+position = Vector2(106.104, 597.112)
 scale = Vector2(1, 1.00432)
-texture = ExtResource("2_6yts2")
+texture = ExtResource("2_anr5o")
