@@ -21,10 +21,17 @@ y_sort_enabled = true
 scale = Vector2(3, 3)
 sprite_frames = ExtResource("1_nwka1")
 animation = &"RightWeight"
-frame_progress = 0.383873
+frame_progress = 0.555804
 speed_scale = 7.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 18.5)
 scale = Vector2(1, 1.04)
 shape = SubResource("RectangleShape2D_skko3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -816
+limit_top = -288
+limit_right = 2256
+limit_bottom = 1248
+position_smoothing_speed = 1.0
