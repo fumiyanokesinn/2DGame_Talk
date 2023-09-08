@@ -6,6 +6,7 @@
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
 
+#include "UI/ballonDialog.h"
 #include "character/player.h"
 #include "sprite2d.h"
 #include "summator.h"
@@ -19,6 +20,7 @@ void initialize_summator_types(ModuleInitializationLevel p_level) {
   ClassDB::register_class<Summator>();
   ClassDB::register_class<GDE_Sprite2D>();
   ClassDB::register_class<Player>();
+  ClassDB::register_class<BallonDialog>();
 }
 
 void uninitialize_summator_types(ModuleInitializationLevel p_level) {
