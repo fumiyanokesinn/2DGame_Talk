@@ -13,11 +13,11 @@ BallonDialog::BallonDialog() {}
 
 BallonDialog::~BallonDialog() {}
 
-void BallonDialog::_ready() {}
+void BallonDialog::_ready() { _name = get_node<Label>(NAME_PATH); }
 
 void BallonDialog::testChat() {
-  std::ifstream f("extension\src\text\test.json");
-  json data = json::parse(f);
+  //   std::ifstream f("extension\src\text\test.json");
+  //   json data = json::parse(f);
 }
 
 // 表示をONにする
