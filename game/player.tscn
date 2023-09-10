@@ -21,7 +21,7 @@ y_sort_enabled = true
 scale = Vector2(3, 3)
 sprite_frames = ExtResource("1_nwka1")
 animation = &"RightWeight"
-frame_progress = 0.947863
+frame_progress = 0.570022
 speed_scale = 7.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

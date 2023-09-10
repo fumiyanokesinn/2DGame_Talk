@@ -16,6 +16,10 @@ class BallonDialog : public CanvasLayer {
   ~BallonDialog();
 
   void _ready();
+
+  void display();
+
+  void testChat();
 };
 
 #endif
