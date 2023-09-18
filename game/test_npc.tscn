@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://wavanu37k4j5"]
+
+[ext_resource type="Texture2D" uid="uid://d2kt3xapo4ba3" path="res://image/test_npc.png" id="1_j61yw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x58a"]
+atlas = ExtResource("1_j61yw")
+region = Rect2(896, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2aym"]
+atlas = ExtResource("1_j61yw")
+region = Rect2(928, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3x83"]
+atlas = ExtResource("1_j61yw")
+region = Rect2(960, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtylt"]
+atlas = ExtResource("1_j61yw")
+region = Rect2(992, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qnx2"]
+atlas = ExtResource("1_j61yw")
+region = Rect2(1024, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axp8b"]
+atlas = ExtResource("1_j61yw")
+region = Rect2(1056, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0xq2"]
+atlas = ExtResource("1_j61yw")
+region = Rect2(1088, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o8mf7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x58a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2aym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3x83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtylt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qnx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axp8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0xq2")
+}],
+"loop": true,
+"name": &"Weight",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2tmr"]
+size = Vector2(32, 40)
+
+[node name="TestNpc" type="TestNpc"]
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_o8mf7")
+animation = &"Weight"
+frame_progress = 0.618874
+speed_scale = 7.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_g2tmr")
