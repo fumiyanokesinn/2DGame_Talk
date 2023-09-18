@@ -33,7 +33,6 @@ class Player : public CharacterBody2D {
 
   void _ready();
   void _physics_process(double delta);
-  void _input(InputEvent* inputEvent);
   void playerMove(double delta);
 };
 

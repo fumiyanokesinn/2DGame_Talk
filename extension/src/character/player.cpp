@@ -25,27 +25,6 @@ void Player::_ready() {
 void Player::_physics_process(double delta) { playerMove(delta); }
 
 /**
- * プレイヤーの操作
- */
-void Player::_input(InputEvent* inputEvent) {
-  bool isInputEventKey = inputEvent->is_class("InputEventKey");
-  // if (isInputEventKey) {
-  //   if (inputEvent->is_action("Move_Right")) {
-  //     UtilityFunctions::print("Move_Right");
-  //   }
-  //   if (inputEvent->is_action("Move_Left")) {
-  //     UtilityFunctions::print("Move_Left");
-  //   }
-  //   if (inputEvent->is_action("Move_Up")) {
-  //     UtilityFunctions::print("Move_Up");
-  //   }
-  //   if (inputEvent->is_action("Move_Down")) {
-  //     UtilityFunctions::print("Move_Down");
-  //   }
-  // }
-}
-
-/**
  * プレイヤーの移動とアニメーション
  */
 void Player::playerMove(double delta) {
