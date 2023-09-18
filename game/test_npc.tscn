@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://wavanu37k4j5"]
+[gd_scene load_steps=12 format=3 uid="uid://wavanu37k4j5"]
 
 [ext_resource type="Texture2D" uid="uid://d2kt3xapo4ba3" path="res://image/test_npc.png" id="1_j61yw"]
+[ext_resource type="Texture2D" uid="uid://b222beq1wdb6f" path="res://image/playerShadow.png" id="2_3at1i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8x58a"]
 atlas = ExtResource("1_j61yw")
@@ -60,7 +61,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2tmr"]
-size = Vector2(32, 40)
+size = Vector2(48, 2)
 
 [node name="TestNpc" type="TestNpc"]
 metadata/_edit_group_ = true
@@ -69,9 +70,14 @@ metadata/_edit_group_ = true
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_o8mf7")
 animation = &"Weight"
-frame_progress = 0.618874
+frame_progress = 0.293412
 speed_scale = 7.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 20)
+position = Vector2(2, 7)
 shape = SubResource("RectangleShape2D_g2tmr")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+y_sort_enabled = true
+scale = Vector2(3, 3)
+texture = ExtResource("2_3at1i")

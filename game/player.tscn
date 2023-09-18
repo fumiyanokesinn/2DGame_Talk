@@ -4,14 +4,14 @@
 [ext_resource type="SpriteFrames" uid="uid://bkk8hys00jdu5" path="res://animation/player_walk.tres" id="1_nwka1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skko3"]
-size = Vector2(20, 49.0385)
+size = Vector2(20, 28.8462)
 
 [node name="Player" type="Player"]
 y_sort_enabled = true
 position = Vector2(605.334, 405)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="."]
 y_sort_enabled = true
 scale = Vector2(3, 3)
 texture = ExtResource("1_kfmqs")
@@ -21,11 +21,11 @@ y_sort_enabled = true
 scale = Vector2(3, 3)
 sprite_frames = ExtResource("1_nwka1")
 animation = &"RightWeight"
-frame_progress = 0.844768
+frame_progress = 0.668291
 speed_scale = 7.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 18.5)
+position = Vector2(1, 8)
 scale = Vector2(1, 1.04)
 shape = SubResource("RectangleShape2D_skko3")
 
