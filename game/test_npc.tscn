@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://wavanu37k4j5"]
+[gd_scene load_steps=13 format=3 uid="uid://wavanu37k4j5"]
 
 [ext_resource type="Texture2D" uid="uid://d2kt3xapo4ba3" path="res://image/test_npc.png" id="1_j61yw"]
 [ext_resource type="Texture2D" uid="uid://b222beq1wdb6f" path="res://image/playerShadow.png" id="2_3at1i"]
@@ -63,6 +63,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2tmr"]
 size = Vector2(48, 2)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_y35ma"]
+radius = 80.399
+
 [node name="TestNpc" type="TestNpc"]
 metadata/_edit_group_ = true
 
@@ -70,7 +73,7 @@ metadata/_edit_group_ = true
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_o8mf7")
 animation = &"Weight"
-frame_progress = 0.293412
+frame_progress = 0.510022
 speed_scale = 7.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -81,3 +84,10 @@ shape = SubResource("RectangleShape2D_g2tmr")
 y_sort_enabled = true
 scale = Vector2(3, 3)
 texture = ExtResource("2_3at1i")
+
+[node name="TalkArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+shape = SubResource("CircleShape2D_y35ma")
