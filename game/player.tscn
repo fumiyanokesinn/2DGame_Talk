@@ -8,7 +8,8 @@ size = Vector2(20, 28.8462)
 
 [node name="Player" type="Player"]
 y_sort_enabled = true
-position = Vector2(605.334, 405)
+position = Vector2(605.334, 418.333)
+collision_layer = 5
 metadata/_edit_group_ = true
 
 [node name="Shadow" type="Sprite2D" parent="."]
@@ -20,8 +21,8 @@ texture = ExtResource("1_kfmqs")
 y_sort_enabled = true
 scale = Vector2(3, 3)
 sprite_frames = ExtResource("1_nwka1")
-animation = &"RightWeight"
-frame_progress = 0.767635
+animation = &"FrontWeight"
+frame_progress = 0.347212
 speed_scale = 7.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

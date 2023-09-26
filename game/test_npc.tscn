@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://wavanu37k4j5"]
+[gd_scene load_steps=17 format=3 uid="uid://wavanu37k4j5"]
 
 [ext_resource type="Texture2D" uid="uid://d2kt3xapo4ba3" path="res://image/test_npc.png" id="1_j61yw"]
 [ext_resource type="Texture2D" uid="uid://b222beq1wdb6f" path="res://image/playerShadow.png" id="2_3at1i"]
+[ext_resource type="Texture2D" uid="uid://cqqua06uv626y" path="res://image/x_button.png" id="4_1wgoy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8x58a"]
 atlas = ExtResource("1_j61yw")
@@ -66,6 +67,28 @@ size = Vector2(48, 2)
 [sub_resource type="CircleShape2D" id="CircleShape2D_y35ma"]
 radius = 80.399
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mecxe"]
+atlas = ExtResource("4_1wgoy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qudge"]
+atlas = ExtResource("4_1wgoy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dn8o0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mecxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qudge")
+}],
+"loop": true,
+"name": &"push",
+"speed": 2.0
+}]
+
 [node name="TestNpc" type="TestNpc"]
 metadata/_edit_group_ = true
 
@@ -73,7 +96,7 @@ metadata/_edit_group_ = true
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_o8mf7")
 animation = &"Weight"
-frame_progress = 0.510022
+frame_progress = 0.170186
 speed_scale = 7.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -91,3 +114,10 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
 shape = SubResource("CircleShape2D_y35ma")
+
+[node name="XButton" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(1, -89)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_dn8o0")
+animation = &"push"

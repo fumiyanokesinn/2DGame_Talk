@@ -11,10 +11,7 @@ using namespace godot;
 
 void TestNpc::_bind_methods() {}
 
-TestNpc::TestNpc() {
-  speed = 6000.0f;
-  velocity = Vector2();
-}
+TestNpc::TestNpc() {}
 
 TestNpc::~TestNpc() {}
 

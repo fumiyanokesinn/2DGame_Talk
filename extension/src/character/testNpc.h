@@ -12,9 +12,6 @@ class TestNpc : public CharacterBody2D {
 
   const NodePath ANIMATED_SPRITE_2D_PATH = NodePath("AnimatedSprite2D");
 
-  Vector2 velocity;
-  float speed;
-
  private:
   AnimatedSprite2D* _animatedSprite2d;
 
