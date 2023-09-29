@@ -1,15 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://qe8fxyc1qbse"]
+[gd_scene load_steps=5 format=3 uid="uid://qe8fxyc1qbse"]
 
 [ext_resource type="Texture2D" uid="uid://b222beq1wdb6f" path="res://image/playerShadow.png" id="1_kfmqs"]
 [ext_resource type="SpriteFrames" uid="uid://bkk8hys00jdu5" path="res://animation/player_walk.tres" id="1_nwka1"]
+[ext_resource type="Script" path="res://player.gd" id="1_rxcmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skko3"]
 size = Vector2(20, 28.8462)
 
-[node name="Player" type="Player"]
+[node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(605.334, 418.333)
 collision_layer = 5
+script = ExtResource("1_rxcmj")
 metadata/_edit_group_ = true
 
 [node name="Shadow" type="Sprite2D" parent="."]
@@ -17,12 +19,12 @@ y_sort_enabled = true
 scale = Vector2(3, 3)
 texture = ExtResource("1_kfmqs")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedWalk" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 scale = Vector2(3, 3)
 sprite_frames = ExtResource("1_nwka1")
-animation = &"FrontWeight"
-frame_progress = 0.347212
+animation = &"RightWeight"
+frame_progress = 0.783206
 speed_scale = 7.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

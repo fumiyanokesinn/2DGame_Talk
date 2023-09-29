@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://wavanu37k4j5"]
+[gd_scene load_steps=18 format=3 uid="uid://wavanu37k4j5"]
 
 [ext_resource type="Texture2D" uid="uid://d2kt3xapo4ba3" path="res://image/test_npc.png" id="1_j61yw"]
+[ext_resource type="Script" path="res://test_npc.gd" id="1_ttgc8"]
 [ext_resource type="Texture2D" uid="uid://b222beq1wdb6f" path="res://image/playerShadow.png" id="2_3at1i"]
 [ext_resource type="Texture2D" uid="uid://cqqua06uv626y" path="res://image/x_button.png" id="4_1wgoy"]
 
@@ -76,6 +77,7 @@ atlas = ExtResource("4_1wgoy")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dn8o0"]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -89,14 +91,15 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="TestNpc" type="TestNpc"]
+[node name="TestNpc" type="CharacterBody2D"]
+script = ExtResource("1_ttgc8")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedWalk" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_o8mf7")
 animation = &"Weight"
-frame_progress = 0.170186
+frame_progress = 0.993743
 speed_scale = 7.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -121,3 +124,7 @@ position = Vector2(1, -89)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_dn8o0")
 animation = &"push"
+autoplay = "push"
+
+[connection signal="body_entered" from="TalkArea" to="." method="_on_talk_area_body_entered"]
+[connection signal="body_exited" from="TalkArea" to="." method="_on_talk_area_body_exited"]
