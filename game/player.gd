@@ -6,13 +6,20 @@ const DIRECTION_RIGHT :String = "RIGHT"
 const DIRECTION_FRONT :String = "FRONT"
 const DIRECTION_BACK:String = "BACK"
 
+# RayCastの方向
+const ROTATION_LEFT :int = 180
+const ROTATION_RIGHT :int = 0
+const ROTATION_FRONT :int = 90
+const ROTATION_BACK :int = 270
+
 # 停止時
 const STOPPING :Vector2= Vector2(0.0,0.0)
 
 # 速度
 const SPEED :float = 6000.0
 
-var direction:String = DIRECTION_BACK
+var direction:String = DIRECTION_BACK # キャラの方向
+var isConversation:bool = false # 会話フラグ
 
 func _physics_process(delta:float)->void: 
 	playerMove(delta);
@@ -28,6 +35,7 @@ func playerMove(delta):
 		direction = DIRECTION_RIGHT;
 		velocity.x = 1 *SPEED;
 		$AnimatedWalk.play("RightRun");
+		$TalkRayCast.rotation_degrees = ROTATION_RIGHT;
 	
 	if(Input.is_action_pressed("Move_Left")&&
 	!Input.is_action_pressed("Move_Right")&&
@@ -36,6 +44,7 @@ func playerMove(delta):
 		direction = DIRECTION_LEFT;
 		velocity.x = -1 *SPEED;
 		$AnimatedWalk.play("LeftRun");
+		$TalkRayCast.rotation_degrees = ROTATION_LEFT;
 	
 	if(Input.is_action_pressed("Move_Up")&&
 	!Input.is_action_pressed("Move_Down")&&
@@ -44,6 +53,7 @@ func playerMove(delta):
 		direction = DIRECTION_FRONT;
 		velocity.y = -1 *SPEED;
 		$AnimatedWalk.play("BackRun");
+		$TalkRayCast.rotation_degrees = ROTATION_BACK;
 	
 	if(Input.is_action_pressed("Move_Down")&&
 	!Input.is_action_pressed("Move_Up")&&
@@ -52,6 +62,7 @@ func playerMove(delta):
 		direction = DIRECTION_BACK;
 		velocity.y = 1 *SPEED;
 		$AnimatedWalk.play("FrontRun");
+		$TalkRayCast.rotation_degrees = ROTATION_FRONT;
 	
 #	斜め移動
 	if(Input.is_action_pressed("Move_Down")&&
@@ -62,8 +73,10 @@ func playerMove(delta):
 		velocity.x = -1 *SPEED;
 		if(direction == DIRECTION_BACK):
 			$AnimatedWalk.play("FrontRun");
+			$TalkRayCast.rotation_degrees = ROTATION_FRONT;
 		else :
 			$AnimatedWalk.play("LeftRun");
+			$TalkRayCast.rotation_degrees = ROTATION_LEFT;
 	
 	if(Input.is_action_pressed("Move_Down")&&
 	Input.is_action_pressed("Move_Right")&&
@@ -73,8 +86,10 @@ func playerMove(delta):
 		velocity.x = 1 *SPEED;
 		if(direction == DIRECTION_BACK):
 			$AnimatedWalk.play("FrontRun");
+			$TalkRayCast.rotation_degrees = ROTATION_FRONT;
 		else :
 			$AnimatedWalk.play("RightRun");
+			$TalkRayCast.rotation_degrees = ROTATION_RIGHT;
 	
 	if(Input.is_action_pressed("Move_Up")&&
 	Input.is_action_pressed("Move_Left")&&
@@ -84,8 +99,10 @@ func playerMove(delta):
 		velocity.x = -1 *SPEED;
 		if(direction == DIRECTION_FRONT):
 			$AnimatedWalk.play("BackRun");
+			$TalkRayCast.rotation_degrees = ROTATION_BACK;
 		else :
 			$AnimatedWalk.play("LeftRun");
+			$TalkRayCast.rotation_degrees = ROTATION_LEFT;
 	
 	if(Input.is_action_pressed("Move_Up")&&
 	Input.is_action_pressed("Move_Right")&&
@@ -95,8 +112,10 @@ func playerMove(delta):
 		velocity.x = 1 *SPEED;
 		if(direction == DIRECTION_FRONT):
 			$AnimatedWalk.play("BackRun");
+			$TalkRayCast.rotation_degrees = ROTATION_BACK;
 		else :
 			$AnimatedWalk.play("RightRun");
+			$TalkRayCast.rotation_degrees = ROTATION_RIGHT;
 	
 #	停止時のアニメーション
 	if(velocity == STOPPING):

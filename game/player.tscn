@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://qe8fxyc1qbse"]
+[gd_scene load_steps=6 format=3 uid="uid://qe8fxyc1qbse"]
 
 [ext_resource type="Texture2D" uid="uid://b222beq1wdb6f" path="res://image/playerShadow.png" id="1_kfmqs"]
 [ext_resource type="SpriteFrames" uid="uid://bkk8hys00jdu5" path="res://animation/player_walk.tres" id="1_nwka1"]
 [ext_resource type="Script" path="res://player.gd" id="1_rxcmj"]
+[ext_resource type="Script" path="res://talkRayCast.gd" id="4_pookj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skko3"]
 size = Vector2(20, 28.8462)
@@ -38,3 +39,11 @@ limit_top = -288
 limit_right = 2256
 limit_bottom = 1248
 position_smoothing_speed = 1.0
+
+[node name="TalkRayCast" type="RayCast2D" parent="."]
+target_position = Vector2(50, 0)
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource("4_pookj")
