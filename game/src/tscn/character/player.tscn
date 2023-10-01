@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b222beq1wdb6f" path="res://image/playerShadow.png" id="1_kfmqs"]
 [ext_resource type="SpriteFrames" uid="uid://bkk8hys00jdu5" path="res://animation/player_walk.tres" id="1_nwka1"]
-[ext_resource type="Script" path="res://player.gd" id="1_rxcmj"]
-[ext_resource type="Script" path="res://talkRayCast.gd" id="4_pookj"]
+[ext_resource type="Script" path="res://src/gd/character/player/player.gd" id="1_rxcmj"]
+[ext_resource type="Script" path="res://src/gd/character/player/talkRayCast.gd" id="4_pookj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skko3"]
 size = Vector2(20, 28.8462)

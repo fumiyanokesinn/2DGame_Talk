@@ -29,6 +29,10 @@ window/size/resizable=false
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 Move_Right={
