@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SHADER_RESOURCE:Shader = preload("res://src/shader/character/test_npc.gdshader")
+var SHADER_RESOURCE:Shader = load("res://src/shader/character/test_npc.gdshader")
 
 func _physics_process(_delta:float)-> void:
 	$AnimatedWalk.play("Weight"); 
