@@ -9,10 +9,12 @@ const ROTATION_BACK :int = 270
 var area:Area2D 
 
 func _process(_delta):
-	is_ray_colliding();
+	var isTalk:bool = is_ray_colliding();
+	if (isTalk && Input.is_action_pressed("Talk_Action")):
+		print("会話します");
 
 # RayCastにオブジェクトが衝突しているか確認
-func is_ray_colliding():
+func is_ray_colliding()->bool:
 	if(is_colliding()):
 		# 衝突している場合
 		if(area!=get_collider()&&area!=null):
@@ -21,7 +23,9 @@ func is_ray_colliding():
 		# 衝突先のXButtonを表示
 		area = get_collider(); 
 		area.get_parent().isXButtonView(true);
+		return true
 	else:
 		if(area!=null):
 			# 衝突していない場合
 			area.get_parent().isXButtonView(false);
+		return false

@@ -1,17 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://wavanu37k4j5"]
+[gd_scene load_steps=19 format=3 uid="uid://wavanu37k4j5"]
 
 [ext_resource type="Script" path="res://src/gd/character/npc/test_npc.gd" id="1_4pxia"]
 [ext_resource type="Texture2D" uid="uid://d2kt3xapo4ba3" path="res://image/test_npc.png" id="1_j61yw"]
 [ext_resource type="Texture2D" uid="uid://b222beq1wdb6f" path="res://image/playerShadow.png" id="2_3at1i"]
-[ext_resource type="Shader" path="res://src/shader/character/test_npc.gdshader" id="3_7om60"]
 [ext_resource type="Texture2D" uid="uid://cqqua06uv626y" path="res://image/x_button.png" id="4_1wgoy"]
 [ext_resource type="Script" path="res://src/gd/character/npc/talkArea.gd" id="5_c0wnw"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uj3g0"]
-shader = ExtResource("3_7om60")
-shader_parameter/width = 1.0
-shader_parameter/outline_color = Color(0.592157, 0.00392157, 0.866667, 1)
-shader_parameter/flg = null
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8x58a"]
 atlas = ExtResource("1_j61yw")
@@ -100,6 +93,7 @@ animations = [{
 radius = 56.0
 
 [node name="TestNpc" type="CharacterBody2D"]
+position = Vector2(608, 376)
 script = ExtResource("1_4pxia")
 metadata/_edit_group_ = true
 
@@ -109,12 +103,13 @@ scale = Vector2(3, 3)
 texture = ExtResource("2_3at1i")
 
 [node name="AnimatedWalk" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_uj3g0")
+position = Vector2(32, -8)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_o8mf7")
 animation = &"Weight"
 frame_progress = 0.993743
 speed_scale = 7.0
+offset = Vector2(-10.6667, 2.66667)
 
 [node name="CharacterHit" type="CollisionShape2D" parent="."]
 position = Vector2(2, 7)
