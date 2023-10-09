@@ -1,12 +1,21 @@
 using Godot;
 using Godot.Collections;
+using System;
+using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+
+#nullable enable
 
 namespace DialogueManagerRuntime
 {
   public partial class DialogueManager : Node
   {
-    private static GodotObject singleton;
+    [Signal]
+    public delegate void ResolvedEventHandler(Variant value);
+
+
+    private static GodotObject? singleton;
 
     public static async Task<GodotObject> GetSingleton()
     {
@@ -18,7 +27,7 @@ namespace DialogueManagerRuntime
       // Try and find the singleton for a few seconds
       while (!Engine.HasSingleton("DialogueManager") && x < 300)
       {
-        await tree.ToSignal(tree, "process_frame");
+        await tree.ToSignal(tree, SceneTree.SignalName.ProcessFrame);
         x++;
       }
 
@@ -33,7 +42,7 @@ namespace DialogueManagerRuntime
     }
 
 
-    public static async Task<DialogueLine> GetNextDialogueLine(Resource dialogueResource, string key = "0", Array<Variant> extraGameStates = null)
+    public static async Task<DialogueLine?> GetNextDialogueLine(Resource dialogueResource, string key = "", Array<Variant>? extraGameStates = null)
     {
       var dialogueManager = Engine.GetSingleton("DialogueManager");
       dialogueManager.Call("_bridge_get_next_dialogue_line", dialogueResource, key, extraGameStates ?? new Array<Variant>());
@@ -45,11 +54,53 @@ namespace DialogueManagerRuntime
     }
 
 
-    public static void ShowExampleDialogueBalloon(Resource dialogueResource, string key = "0", Array<Variant> extraGameStates = null)
+    public static void ShowExampleDialogueBalloon(Resource dialogueResource, string key = "", Array<Variant>? extraGameStates = null)
     {
       Engine.GetSingleton("DialogueManager").Call("show_example_dialogue_balloon", dialogueResource, key, extraGameStates ?? new Array<Variant>());
     }
+
+
+    public bool ThingHasMethod(GodotObject thing, string method)
+    {
+      MethodInfo? info = thing.GetType().GetMethod(method, BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly);
+      return info != null;
+    }
+
+#nullable disable
+    public async void ResolveThingMethod(GodotObject thing, string method, Array<Variant> args)
+    {
+      MethodInfo? info = thing.GetType().GetMethod(method, BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly);
+
+      if (info == null) return;
+
+      // Convert the method args to something reflection can handle
+      ParameterInfo[] argTypes = info.GetParameters();
+      object[] _args = new object[argTypes.Length];
+      for (int i = 0; i < argTypes.Length; i++)
+      {
+        if (i < args.Count && args[i].Obj != null)
+        {
+          _args[i] = Convert.ChangeType(args[i].Obj, argTypes[i].ParameterType);
+        }
+        else if (argTypes[i].DefaultValue != null)
+        {
+          _args[i] = argTypes[i].DefaultValue;
+        }
+      }
+
+      if (info.ReturnType == typeof(Task))
+      {
+        await (Task)info.Invoke(thing, _args);
+        EmitSignal(SignalName.Resolved, null);
+      }
+      else
+      {
+        var value = (Variant)info.Invoke(thing, _args);
+        EmitSignal(SignalName.Resolved, value);
+      }
+    }
   }
+#nullable enable
 
 
   public partial class DialogueLine : RefCounted
@@ -95,8 +146,8 @@ namespace DialogueManagerRuntime
       get => responses;
     }
 
-    private string time = null;
-    public string Time
+    private string? time = null;
+    public string? Time
     {
       get => time;
     }
@@ -104,7 +155,7 @@ namespace DialogueManagerRuntime
     private Dictionary pauses = new Dictionary();
     private Dictionary speeds = new Dictionary();
 
-    private Array<Array> inline_mutations = new Array<Array>();
+    private Array<Godot.Collections.Array> inline_mutations = new Array<Godot.Collections.Array>();
 
     private Array<Variant> extra_game_states = new Array<Variant>();
 
@@ -119,7 +170,7 @@ namespace DialogueManagerRuntime
       translation_key = (string)data.Get("translation_key");
       pauses = (Dictionary)data.Get("pauses");
       speeds = (Dictionary)data.Get("speeds");
-      inline_mutations = (Array<Array>)data.Get("inline_mutations");
+      inline_mutations = (Array<Godot.Collections.Array>)data.Get("inline_mutations");
 
       foreach (var response in (Array<RefCounted>)data.Get("responses"))
       {
@@ -169,3 +220,4 @@ namespace DialogueManagerRuntime
     }
   }
 }
+

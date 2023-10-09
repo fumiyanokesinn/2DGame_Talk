@@ -139,7 +139,7 @@ msgid "settings.revert_to_default_test_scene"
 msgstr "Revert to default test scene"
 
 msgid "settings.autoload"
-msgstr "Autload"
+msgstr "Autoload"
 
 msgid "settings.path"
 msgstr "Path"
@@ -153,6 +153,9 @@ msgstr "Treat missing translation keys as errors"
 msgid "settings.missing_keys_hint"
 msgstr "If you are using static translation keys then having this enabled will help you find any lines that you haven't added a key to yet."
 
+msgid "settings.characters_translations"
+msgstr "Export character names in translation files"
+
 msgid "settings.wrap_long_lines"
 msgstr "Wrap long lines"
 
@@ -164,6 +167,9 @@ msgstr "Skip over missing state value errors (not recommended)"
 
 msgid "settings.custom_test_scene"
 msgstr "Custom test scene (must extend BaseDialogueTestScene)"
+
+msgid "settings.default_csv_local"
+msgstr "Default CSV Local"
 
 msgid "settings.states_shortcuts"
 msgstr "State Shortcuts"
@@ -268,7 +274,7 @@ msgid "errors.condition_has_no_content"
 msgstr "A condition line needs an indented line below it."
 
 msgid "errors.incomplete_expression"
-msgstr "Incomplate expression."
+msgstr "Incomplete expression."
 
 msgid "errors.invalid_expression_for_value"
 msgstr "Invalid expression for value."
@@ -395,6 +401,9 @@ msgstr "Key \"{key}\" not found in dictionary \"{dictionary}\""
 
 msgid "runtime.property_not_found"
 msgstr "\"{property}\" is not a property on any game states ({states})."
+
+msgid "runtime.property_not_found_missing_export"
+msgstr "\"{property}\" is not a property on any game states ({states}). You might need to add an [Export] decorator."
 
 msgid "runtime.method_not_found"
 msgstr "\"{method}\" is not a method on any game states ({states})"
