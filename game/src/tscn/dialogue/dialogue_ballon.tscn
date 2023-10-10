@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://0u0jpbpr8yws"]
+
+[ext_resource type="Texture2D" uid="uid://vcu0hoha0pto" path="res://image/balloon.png" id="1_6ag80"]
+[ext_resource type="Script" path="res://src/gd/dialogue/dialogue_ballon.gd" id="1_m33k0"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_8iywx"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_dda5j"]
+
+[node name="DialogueBallon" type="Node2D"]
+scale = Vector2(0.626465, 0.559284)
+script = ExtResource("1_m33k0")
+
+[node name="Balloon" type="Panel" parent="."]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackGround" type="NinePatchRect" parent="Balloon"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 211.0
+offset_bottom = 119.0
+scale = Vector2(1.58802, 1.59393)
+texture = ExtResource("1_6ag80")
+
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 19.1551
+offset_top = 16.092
+offset_right = 144.155
+offset_bottom = 45.092
+scale = Vector2(1.33333, 1.76471)
+text = "Character"
+
+[node name="DialogueLabel" type="RichTextLabel" parent="Balloon"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 19.1551
+offset_top = 60.792
+offset_right = 150.155
+offset_bottom = 100.792
+scale = Vector2(1.31579, 1.8)
+text = "Dialogue"
+script = ExtResource("2_8iywx")
+
+[node name="ResponsesMenu" type="VBoxContainer" parent="Balloon"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 81.0
+offset_top = 80.0
+offset_right = 121.0
+offset_bottom = 87.0
+script = ExtResource("3_dda5j")
+
+[connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]

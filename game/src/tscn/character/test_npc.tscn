@@ -95,7 +95,6 @@ radius = 56.0
 [node name="TestNpc" type="CharacterBody2D"]
 position = Vector2(608, 376)
 script = ExtResource("1_4pxia")
-metadata/_edit_group_ = true
 
 [node name="Shadow" type="Sprite2D" parent="."]
 y_sort_enabled = true

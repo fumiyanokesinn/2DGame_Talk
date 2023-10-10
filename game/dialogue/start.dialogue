@@ -1,5 +1,11 @@
-~ start
+~ TestNpc
 
-Nathan: Hi Coco!
+NPC_1: テストです！
+
+=> END
+
+~ TestNpc2
+
+NPC_2: テストだよ！
 
 => END

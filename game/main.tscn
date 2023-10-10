@@ -7,6 +7,6 @@
 script = ExtResource("1_ptcg0")
 
 [node name="GDE_Sprite2D" type="GDE_Sprite2D" parent="."]
-position = Vector2(109.901, 602.832)
+position = Vector2(92.4091, 593.977)
 scale = Vector2(1, 1.00432)
 texture = ExtResource("2_anr5o")
