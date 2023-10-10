@@ -22,7 +22,10 @@ var direction:String = DIRECTION_BACK # キャラの方向
 var isConversation:bool = false # 会話フラグ
 
 func _physics_process(delta:float)->void: 
-	playerMove(delta);
+	if(!BalloonManager.isChat):
+		playerMove(delta);
+	
+	stopping();
 
 #　キャラクターの移動を制御
 func playerMove(delta):
@@ -117,8 +120,12 @@ func playerMove(delta):
 			$AnimatedWalk.play("RightRun");
 			$TalkRayCast.rotation_degrees = $TalkRayCast.ROTATION_RIGHT;
 	
-#	停止時のアニメーション
-	if(velocity == STOPPING):
+	velocity = velocity *delta;
+	move_and_slide();
+
+#　停止時または会話時のアニメーション
+func stopping()->void:
+	if(velocity == STOPPING || BalloonManager.isChat):
 		if(direction == DIRECTION_LEFT):
 			$AnimatedWalk.play("LeftWeight");
 		if(direction == DIRECTION_RIGHT):
@@ -127,6 +134,3 @@ func playerMove(delta):
 			$AnimatedWalk.play("FrontWeight");
 		if(direction == DIRECTION_FRONT):
 			$AnimatedWalk.play("BackWeight");
-	
-	velocity = velocity *delta;
-	move_and_slide();

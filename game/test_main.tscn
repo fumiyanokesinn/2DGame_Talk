@@ -6166,6 +6166,7 @@ sources/1 = SubResource("TileSetAtlasSource_7s54q")
 
 [node name="TestMain" type="Node2D"]
 y_sort_enabled = true
+scale = Vector2(1, 1.00093)
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(3, 3)
