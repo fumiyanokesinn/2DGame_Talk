@@ -24,6 +24,7 @@ var dialogue_line: DialogueLine:
 
 		# The dialogue has finished so close the balloon
 		if not next_dialogue_line:
+			BalloonManager.isChat = false
 			queue_free()
 			return
 
