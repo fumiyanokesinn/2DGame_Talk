@@ -30,6 +30,7 @@ offset_top = 16.092
 offset_right = 144.155
 offset_bottom = 45.092
 scale = Vector2(1.33333, 1.76471)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Character"
 
 [node name="DialogueLabel" type="RichTextLabel" parent="Balloon"]
@@ -40,6 +41,7 @@ offset_top = 60.792
 offset_right = 150.155
 offset_bottom = 100.792
 scale = Vector2(1.31579, 1.8)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Dialogue"
 script = ExtResource("2_8iywx")
 

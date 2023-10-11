@@ -161,7 +161,6 @@ func _mutate_inline_mutations(index: int) -> void:
 
 # Determine if the current autopause character at the cursor should qualify to pause typing.
 func _should_auto_pause() -> bool:
-	if visible_characters == 0: return false
 
 	var parsed_text: String = get_parsed_text()
 
