@@ -9,11 +9,15 @@ func _physics_process(_delta:float)-> void:
 	$AnimatedWalk.play("Weight"); 
 	if($XButton.visible):
 		if(Input.is_action_just_pressed("Talk_Action")):
-#			$DialogueBallon.visible = true;
 			chat(START_DIALOGUE_FILE,get_name());
 
 # チャットボタンを表示する
 func isXButtonView(flg:bool)->void:
+#	既に会話している場合非表示
+	if(BalloonManager.isChat):
+		$XButton.visible = false;
+		return
+	
 	$XButton.visible = flg;
 	if(flg):
 		# シェーダーリソースを持つ新しいShaderMaterialを作成
