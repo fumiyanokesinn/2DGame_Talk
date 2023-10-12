@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_dda5j"]
 
 [node name="DialogueBallon" type="Node2D"]
+z_index = 1
+z_as_relative = false
 scale = Vector2(0.626465, 0.559284)
 script = ExtResource("1_m33k0")
 
@@ -36,10 +38,10 @@ text = "Character"
 [node name="DialogueLabel" type="RichTextLabel" parent="Balloon"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 19.1551
-offset_top = 60.792
-offset_right = 150.155
-offset_bottom = 100.792
+offset_left = 19.0
+offset_top = 61.0
+offset_right = 248.0
+offset_bottom = 101.0
 scale = Vector2(1.31579, 1.8)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Dialogue"

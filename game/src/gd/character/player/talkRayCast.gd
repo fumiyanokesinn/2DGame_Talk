@@ -8,6 +8,9 @@ const ROTATION_BACK :int = 270
 
 var area:Area2D 
 
+func _process(_delta):
+	is_ray_colliding();
+
 # RayCastにオブジェクトが衝突しているか確認
 func is_ray_colliding()->bool:
 	if(is_colliding()):

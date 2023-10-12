@@ -31,6 +31,11 @@ var dialogue_line: DialogueLine:
 		dialogue_line = next_dialogue_line
 
 		character_label.visible = not dialogue_line.character.is_empty()
+#		キャラクターが変化したバルーンの対象も変化する
+		var isChange:bool = isCharacterChange(character_label.text,dialogue_line.character) 
+		if(isChange):
+			characterChange(dialogue_line)
+		
 		character_label.text = tr(dialogue_line.character, "dialogue")
 
 		dialogue_label.hide()
@@ -97,3 +102,21 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("ui_accept") and get_viewport().gui_get_focus_owner() == balloon:
 		next(dialogue_line.next_id)
 
+#　会話キャラクターが変化したか
+func isCharacterChange(characterLabel:String,dialogueText:String)->bool:
+#	初回はnullなので変化なし
+	if(characterLabel == "Character"):
+		return false
+	
+	if (characterLabel == dialogueText):
+		return false
+	else:
+		return true
+
+# キャラクターが変更した時
+func characterChange(dialogueLine:DialogueLine)->void:
+#	変更先を取得
+	var changeTarget :CharacterBody2D = get_tree().current_scene.find_child(dialogueLine.character)
+	get_parent().remove_child(get_node("."))
+	#　バルーンノードを追加
+	changeTarget.add_child(get_node("."))

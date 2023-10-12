@@ -1,7 +1,9 @@
 ~ TestNpc
 
-NPC_1: テストです！
-NPC_1: ハローハローハロー！
+TestNpc: おはようPlayer!!
+TestNpc: 元気してますか？
+Player: 私は元気です。ありがとうNPC1!
+TestNpc: 良かったです。それでは！
 
 => END
 
