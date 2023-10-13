@@ -1,7 +1,11 @@
 ~ TestNpc
 
 TestNpc: おはようPlayer!!
-TestNpc: 元気してますか？
+TestNpc: 調子はどうですか？
+- First one
+	Nathan: You picked the first one.
+- Second one
+	Nathan: You picked the second one.
 Player: 私は元気です。ありがとうNPC1!
 TestNpc: 良かったです。それでは！
 

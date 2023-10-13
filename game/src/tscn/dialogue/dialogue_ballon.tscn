@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://0u0jpbpr8yws"]
+[gd_scene load_steps=6 format=3 uid="uid://0u0jpbpr8yws"]
 
 [ext_resource type="Texture2D" uid="uid://vcu0hoha0pto" path="res://image/balloon.png" id="1_6ag80"]
 [ext_resource type="Script" path="res://src/gd/dialogue/dialogue_ballon.gd" id="1_m33k0"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_8iywx"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_dda5j"]
+[ext_resource type="FontFile" uid="uid://b0jwplk8cx0y8" path="res://fonts/Merriweather-Black.ttf" id="3_k47ur"]
 
 [node name="DialogueBallon" type="Node2D"]
 z_index = 1
@@ -28,32 +29,35 @@ texture = ExtResource("1_6ag80")
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 19.1551
-offset_top = 16.092
+offset_top = 10.728
 offset_right = 144.155
-offset_bottom = 45.092
+offset_bottom = 39.728
 scale = Vector2(1.33333, 1.76471)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_k47ur")
 text = "Character"
 
 [node name="DialogueLabel" type="RichTextLabel" parent="Balloon"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 19.0
-offset_top = 61.0
+offset_top = 46.696
 offset_right = 248.0
-offset_bottom = 101.0
+offset_bottom = 86.696
 scale = Vector2(1.31579, 1.8)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_k47ur")
 text = "Dialogue"
 script = ExtResource("2_8iywx")
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 81.0
-offset_top = 80.0
-offset_right = 121.0
-offset_bottom = 87.0
+offset_left = 27.0
+offset_top = 88.0
+offset_right = 220.0
+offset_bottom = 129.0
 script = ExtResource("3_dda5j")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
