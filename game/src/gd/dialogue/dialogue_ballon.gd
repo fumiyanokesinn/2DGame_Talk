@@ -102,12 +102,13 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("ui_accept") and get_viewport().gui_get_focus_owner() == balloon:
 		next(dialogue_line.next_id)
 
+# response_selectedのシグナル
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
 
-#　会話キャラクターが変化したか
+# 会話キャラクターが変化したか
 func isCharacterChange(characterLabel:String,dialogueText:String)->bool:
-#	初回はnullなので変化なし
+# 初回はnullなので変化なし
 	if(characterLabel == "Character"):
 		return false
 	
@@ -118,7 +119,7 @@ func isCharacterChange(characterLabel:String,dialogueText:String)->bool:
 
 # キャラクターが変更した時
 func characterChange(dialogueLine:DialogueLine)->void:
-#	変更先を取得
+# 変更先を取得
 	var changeTarget :CharacterBody2D = get_tree().current_scene.find_child(dialogueLine.character)
 	get_parent().remove_child(get_node("."))
 	#　バルーンノードを追加
