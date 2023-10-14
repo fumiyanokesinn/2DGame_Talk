@@ -31,6 +31,7 @@ func _physics_process(delta:float)->void:
 func playerMove(delta):
 	velocity = Vector2(0.0,0.0);
 	
+	# 右移動
 	if(Input.is_action_pressed("Move_Right")&&
 	!Input.is_action_pressed("Move_Left")&&
 	!Input.is_action_pressed("Move_Up")&&
@@ -39,7 +40,7 @@ func playerMove(delta):
 		velocity.x = 1 *SPEED;
 		$AnimatedWalk.play("RightRun");
 		$TalkRayCast.rotation_degrees = $TalkRayCast.ROTATION_RIGHT;
-	
+	# 左移動
 	if(Input.is_action_pressed("Move_Left")&&
 	!Input.is_action_pressed("Move_Right")&&
 	!Input.is_action_pressed("Move_Up")&&
@@ -48,7 +49,7 @@ func playerMove(delta):
 		velocity.x = -1 *SPEED;
 		$AnimatedWalk.play("LeftRun");
 		$TalkRayCast.rotation_degrees = $TalkRayCast.ROTATION_LEFT;
-	
+	# 上移動
 	if(Input.is_action_pressed("Move_Up")&&
 	!Input.is_action_pressed("Move_Down")&&
 	!Input.is_action_pressed("Move_Left")&&
@@ -57,7 +58,7 @@ func playerMove(delta):
 		velocity.y = -1 *SPEED;
 		$AnimatedWalk.play("BackRun");
 		$TalkRayCast.rotation_degrees = $TalkRayCast.ROTATION_BACK;
-	
+	# 下移動
 	if(Input.is_action_pressed("Move_Down")&&
 	!Input.is_action_pressed("Move_Up")&&
 	!Input.is_action_pressed("Move_Left")&&
@@ -67,7 +68,7 @@ func playerMove(delta):
 		$AnimatedWalk.play("FrontRun");
 		$TalkRayCast.rotation_degrees = $TalkRayCast.ROTATION_FRONT;
 	
-#	斜め移動
+	# 斜め左下移動
 	if(Input.is_action_pressed("Move_Down")&&
 	Input.is_action_pressed("Move_Left")&&
 	!Input.is_action_pressed("Move_Up")&&
@@ -80,7 +81,7 @@ func playerMove(delta):
 		else :
 			$AnimatedWalk.play("LeftRun");
 			$TalkRayCast.rotation_degrees = $TalkRayCast.ROTATION_LEFT;
-	
+	# 斜め右下移動
 	if(Input.is_action_pressed("Move_Down")&&
 	Input.is_action_pressed("Move_Right")&&
 	!Input.is_action_pressed("Move_Up")&&
@@ -93,7 +94,7 @@ func playerMove(delta):
 		else :
 			$AnimatedWalk.play("RightRun");
 			$TalkRayCast.rotation_degrees = $TalkRayCast.ROTATION_RIGHT;
-	
+	# 斜め左上移動
 	if(Input.is_action_pressed("Move_Up")&&
 	Input.is_action_pressed("Move_Left")&&
 	!Input.is_action_pressed("Move_Down")&&
@@ -106,7 +107,7 @@ func playerMove(delta):
 		else :
 			$AnimatedWalk.play("LeftRun");
 			$TalkRayCast.rotation_degrees = $TalkRayCast.ROTATION_LEFT;
-	
+	# 斜め右上移動
 	if(Input.is_action_pressed("Move_Up")&&
 	Input.is_action_pressed("Move_Right")&&
 	!Input.is_action_pressed("Move_Down")&&
