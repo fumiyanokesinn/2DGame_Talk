@@ -39,6 +39,7 @@ func set_responses(next_responses: Array[DialogueResponse]) -> void:
 				item.name = String(item.name) + "Disallowed"
 				item.modulate.a = 0.4
 			item.text = response.text
+			# item.add_theme_stylebox_override("focus",load("res://fonts/focus_menu.tres"))
 			add_child(item)
 
 		_configure_focus()

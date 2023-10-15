@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b5s8q1abh8uwn"]
+
+[ext_resource type="StyleBox" uid="uid://b4jmvmuc2yv7s" path="res://fonts/focus_menu.tres" id="1_rre6m"]
+[ext_resource type="FontFile" uid="uid://dkcfq3flafwsx" path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" id="2_6w3ky"]
+
+[resource]
+default_font = ExtResource("2_6w3ky")
+default_font_size = 25
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/styles/focus = ExtResource("1_rre6m")

@@ -13,5 +13,5 @@ func show_dialogue_balloon(resource: DialogueResource,node: Node, title: String 
 #		バルーンノードを会話したキャラに追加
 		var balloon: Node2D = (BalloonScene).instantiate();
 		node.add_child(balloon);
-		balloon.position.y = -150;
+		balloon.position.y = -200;
 		balloon.start(resource, title, extra_game_states);

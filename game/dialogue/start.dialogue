@@ -2,12 +2,12 @@
 
 TestNpc: おはようPlayer!!
 TestNpc: 調子はどうですか？
-- First one
-	Player: You picked the first one.
-- Second one
-	Player: You picked the second one.
-Player: 私は元気です。ありがとうNPC1!
-TestNpc: 良かったです。それでは！
+- いいです
+	Player: 私は元気です。ありがとうNPC1!
+	TestNpc: 良かったです。それでは！
+- 悪いです
+	Player: そこまで良くないです
+	TestNpc: そうですか。体に気をつけて
 
 => END
 
