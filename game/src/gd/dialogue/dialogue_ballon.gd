@@ -33,8 +33,6 @@ var dialogue_line: DialogueLine:
 		character_label.visible = not dialogue_line.character.is_empty()
 #		キャラクターが変化したバルーンの対象も変化する
 		var isChange:bool = isCharacterChange(character_label.text,dialogue_line.character) 
-		if(isChange):
-			characterChange(dialogue_line)
 		
 		character_label.text = tr(dialogue_line.character, "dialogue")
 
@@ -47,7 +45,10 @@ var dialogue_line: DialogueLine:
 		# Show our balloon
 		balloon.show()
 		will_hide_balloon = false
-
+		
+		if(isChange):
+			characterChange(dialogue_line)
+		
 		dialogue_label.show()
 		if not dialogue_line.text.is_empty():
 			dialogue_label.type_out()
