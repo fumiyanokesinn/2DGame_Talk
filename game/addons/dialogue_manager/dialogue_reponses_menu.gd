@@ -69,7 +69,6 @@ func _configure_focus() -> void:
 			item.focus_neighbor_bottom = items[i + 1].get_path()
 			item.focus_next = items[i + 1].get_path()
 
-		item.mouse_entered.connect(_on_response_mouse_entered.bind(item))
 		item.gui_input.connect(_on_response_gui_input.bind(item))
 
 	items[0].grab_focus()
@@ -86,12 +85,6 @@ func get_menu_items() -> Array:
 
 
 ### Signals
-
-
-func _on_response_mouse_entered(item: Control) -> void:
-	if "Disallowed" in item.name: return
-
-	item.grab_focus()
 
 
 func _on_response_gui_input(event: InputEvent, item: Control) -> void:
