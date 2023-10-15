@@ -34,6 +34,7 @@ scale = Vector2(1, 1.04)
 shape = SubResource("RectangleShape2D_skko3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.6, 1.6)
 limit_left = -816
 limit_top = -288
 limit_right = 2256
