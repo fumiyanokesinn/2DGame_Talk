@@ -1,9 +1,9 @@
 [gd_scene load_steps=19 format=3 uid="uid://wavanu37k4j5"]
 
 [ext_resource type="Script" path="res://src/gd/character/npc/test_npc.gd" id="1_4pxia"]
-[ext_resource type="Texture2D" uid="uid://d2kt3xapo4ba3" path="res://image/test_npc.png" id="1_j61yw"]
-[ext_resource type="Texture2D" uid="uid://b222beq1wdb6f" path="res://image/playerShadow.png" id="2_3at1i"]
-[ext_resource type="Texture2D" uid="uid://cqqua06uv626y" path="res://image/x_button.png" id="4_1wgoy"]
+[ext_resource type="Texture2D" uid="uid://d2kt3xapo4ba3" path="res://image/Character/NPC/test_npc.png" id="1_j61yw"]
+[ext_resource type="Texture2D" uid="uid://b222beq1wdb6f" path="res://image/Character/Player/playerShadow.png" id="2_3at1i"]
+[ext_resource type="Texture2D" uid="uid://cqqua06uv626y" path="res://image/UI/DialogueBallon/Button_X.png" id="4_1wgoy"]
 [ext_resource type="Script" path="res://src/gd/character/npc/talkArea.gd" id="5_c0wnw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8x58a"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wmp8unh7yc8y"
-path="res://.godot/imported/ballon_dialog.png-6257a9f7075f0eabcda3c380d372eec7.ctex"
+uid="uid://cwx6ctitb0q07"
+path="res://.godot/imported/Button_D.png-119d08401eb97c744b4c2e92f53a9ca1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/ballon_dialog.png"
-dest_files=["res://.godot/imported/ballon_dialog.png-6257a9f7075f0eabcda3c380d372eec7.ctex"]
+source_file="res://image/UI/ItemList/Button_D.png"
+dest_files=["res://.godot/imported/Button_D.png-119d08401eb97c744b4c2e92f53a9ca1.ctex"]
 
 [params]
 

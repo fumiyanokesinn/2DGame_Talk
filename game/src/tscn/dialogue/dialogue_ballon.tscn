@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://0u0jpbpr8yws"]
 
-[ext_resource type="Texture2D" uid="uid://vcu0hoha0pto" path="res://image/balloon.png" id="1_6ag80"]
 [ext_resource type="Script" path="res://src/gd/dialogue/dialogue_ballon.gd" id="1_m33k0"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_8iywx"]
+[ext_resource type="Texture2D" uid="uid://vcu0hoha0pto" path="res://image/UI/DialogueBallon/balloon.png" id="2_57vxa"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_dda5j"]
 [ext_resource type="FontFile" uid="uid://dkcfq3flafwsx" path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" id="4_mi3i3"]
 [ext_resource type="Theme" uid="uid://b5s8q1abh8uwn" path="res://src/tres/dialogue/dialogue_response_menu.tres" id="5_wl6xo"]
@@ -24,7 +24,7 @@ layout_mode = 0
 offset_right = 309.0
 offset_bottom = 179.0
 scale = Vector2(1.58802, 1.59393)
-texture = ExtResource("1_6ag80")
+texture = ExtResource("2_57vxa")
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon"]
 unique_name_in_owner = true

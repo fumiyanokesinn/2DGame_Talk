@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bcishyd3rr4p3"]
+[gd_scene load_steps=2 format=3 uid="uid://bcishyd3rr4p3"]
+
+[ext_resource type="Texture2D" uid="uid://mnrghjma1rb7" path="res://image/UI/ItemList/circle.png" id="1_0aw8v"]
 
 [node name="ItemList" type="CanvasLayer"]
 
@@ -10,11 +12,26 @@ offset_left = 2.0
 offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 500
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 602
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+clip_contents = true
 layout_mode = 2
+mouse_force_pass_scroll_events = false
 color = Color(0.0901961, 0.0901961, 0.0901961, 0.756863)
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_right = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0aw8v")
+expand_mode = 2

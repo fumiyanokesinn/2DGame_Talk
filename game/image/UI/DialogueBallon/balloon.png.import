@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dab5ehlr83we8"
-path="res://.godot/imported/player.png-1f689d969e4228c2cd397b4c95a320de.ctex"
+uid="uid://vcu0hoha0pto"
+path="res://.godot/imported/balloon.png-c995dd07c1986f9e199b0109aa475488.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/player.png"
-dest_files=["res://.godot/imported/player.png-1f689d969e4228c2cd397b4c95a320de.ctex"]
+source_file="res://image/UI/DialogueBallon/balloon.png"
+dest_files=["res://.godot/imported/balloon.png-c995dd07c1986f9e199b0109aa475488.ctex"]
 
 [params]
 
