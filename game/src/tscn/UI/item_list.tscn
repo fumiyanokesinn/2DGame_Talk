@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcishyd3rr4p3"]
+[gd_scene load_steps=4 format=3 uid="uid://bcishyd3rr4p3"]
 
 [ext_resource type="Texture2D" uid="uid://mnrghjma1rb7" path="res://image/UI/ItemList/circle.png" id="1_0aw8v"]
+[ext_resource type="Texture2D" uid="uid://cwediyu4u3kj6" path="res://image/UI/ItemList/Button_A.png" id="1_ln3yp"]
+[ext_resource type="Texture2D" uid="uid://cwx6ctitb0q07" path="res://image/UI/ItemList/Button_D.png" id="3_eqmx1"]
 
 [node name="ItemList" type="CanvasLayer"]
 
@@ -23,7 +25,24 @@ layout_mode = 2
 mouse_force_pass_scroll_events = false
 color = Color(0.0901961, 0.0901961, 0.0901961, 0.756863)
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button_A" type="TextureRect" parent="MarginContainer/ColorRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_ln3yp")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_0aw8v")
+
+[node name="Button_D" type="TextureRect" parent="MarginContainer/ColorRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_eqmx1")
+
+[node name="Circle" type="TextureRect" parent="MarginContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
