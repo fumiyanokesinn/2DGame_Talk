@@ -34,7 +34,7 @@ offset_bottom = 40.0
 layout_mode = 2
 texture = ExtResource("1_ln3yp")
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect/HBoxContainer"]
+[node name="Circle" type="TextureRect" parent="MarginContainer/ColorRect/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("1_0aw8v")
 
