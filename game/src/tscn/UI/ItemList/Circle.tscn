@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://c62ubnrbvqkqu"]
+
+[ext_resource type="Texture2D" uid="uid://cwediyu4u3kj6" path="res://image/UI/ItemList/Button_A.png" id="1_cegp3"]
+[ext_resource type="Script" path="res://src/tscn/UI/ItemList/Circle.gd" id="1_n3aah"]
+[ext_resource type="Texture2D" uid="uid://mnrghjma1rb7" path="res://image/UI/ItemList/circle.png" id="2_hjp83"]
+[ext_resource type="Texture2D" uid="uid://cwx6ctitb0q07" path="res://image/UI/ItemList/Button_D.png" id="3_pyr7c"]
+
+[node name="Circle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n3aah")
+
+[node name="MarginCircle" type="MarginContainer" parent="."]
+offset_bottom = 161.0
+theme_override_constants/margin_left = 125
+
+[node name="HBoxCircle" type="HBoxContainer" parent="MarginCircle"]
+layout_mode = 2
+
+[node name="VBoxBottonA" type="VBoxContainer" parent="MarginCircle/HBoxCircle"]
+layout_mode = 2
+alignment = 2
+
+[node name="ButtonA" type="TextureRect" parent="MarginCircle/HBoxCircle/VBoxBottonA"]
+custom_minimum_size = Vector2(40, 40)
+layout_direction = 2
+layout_mode = 2
+texture = ExtResource("1_cegp3")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginCircle/HBoxCircle"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 40
+
+[node name="Circle" type="TextureRect" parent="MarginCircle/HBoxCircle/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_hjp83")
+expand_mode = 2
+
+[node name="VBoxBottonD" type="VBoxContainer" parent="MarginCircle/HBoxCircle"]
+layout_mode = 2
+alignment = 2
+
+[node name="ButtonD" type="TextureRect" parent="MarginCircle/HBoxCircle/VBoxBottonD"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("3_pyr7c")
