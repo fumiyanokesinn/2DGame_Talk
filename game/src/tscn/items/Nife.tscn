@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5eakuvobrt6v"]
+
+[ext_resource type="Texture2D" uid="uid://rvhpaxc3giet" path="res://image/Item/nife.png" id="1_oryep"]
+[ext_resource type="FontFile" uid="uid://dkcfq3flafwsx" path="res://fonts/OpenSans-VariableFont_wdth,wght.ttf" id="2_q1qyq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lm2gl"]
+draw_center = false
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.811765, 0.0196078, 0.207843, 1)
+border_blend = true
+
+[node name="Nife" type="Panel"]
+custom_minimum_size = Vector2(125, 125)
+offset_right = 125.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lm2gl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Image" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+texture = ExtResource("1_oryep")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_q1qyq")
+text = "ナイフ"
+horizontal_alignment = 1
+vertical_alignment = 2

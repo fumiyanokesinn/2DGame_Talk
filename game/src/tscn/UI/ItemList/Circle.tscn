@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c62ubnrbvqkqu"]
 
+[ext_resource type="Script" path="res://src/gd/UI/ItemList/Circle.gd" id="1_bys05"]
 [ext_resource type="Texture2D" uid="uid://cwediyu4u3kj6" path="res://image/UI/ItemList/Button_A.png" id="1_cegp3"]
-[ext_resource type="Script" path="res://src/tscn/UI/ItemList/Circle.gd" id="1_n3aah"]
 [ext_resource type="Texture2D" uid="uid://mnrghjma1rb7" path="res://image/UI/ItemList/circle.png" id="2_hjp83"]
 [ext_resource type="Texture2D" uid="uid://cwx6ctitb0q07" path="res://image/UI/ItemList/Button_D.png" id="3_pyr7c"]
 
@@ -12,10 +12,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_n3aah")
+script = ExtResource("1_bys05")
 
 [node name="MarginCircle" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_bottom = 161.0
+theme_override_constants/margin_left = 126
 
 [node name="HBoxCircle" type="HBoxContainer" parent="MarginCircle"]
 layout_mode = 2

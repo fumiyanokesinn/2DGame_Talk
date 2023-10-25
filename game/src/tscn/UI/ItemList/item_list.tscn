@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcishyd3rr4p3"]
 
+[ext_resource type="PackedScene" uid="uid://bgs4ujkkv755c" path="res://src/tscn/items/Apple.tscn" id="2_w6bj8"]
 [ext_resource type="PackedScene" uid="uid://c62ubnrbvqkqu" path="res://src/tscn/UI/ItemList/Circle.tscn" id="3_sfjei"]
-[ext_resource type="Texture2D" uid="uid://rvhpaxc3giet" path="res://image/Item/nife.png" id="4_48caf"]
-[ext_resource type="Texture2D" uid="uid://dwiphp8gkxidn" path="res://image/Item/apple.png" id="5_wu0gj"]
+[ext_resource type="PackedScene" uid="uid://c5eakuvobrt6v" path="res://src/tscn/items/Nife.tscn" id="4_58l7v"]
 
 [node name="ItemList" type="CanvasLayer"]
 
@@ -25,29 +25,48 @@ layout_mode = 2
 mouse_force_pass_scroll_events = false
 color = Color(0.0901961, 0.0901961, 0.0901961, 0.756863)
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect"]
+[node name="MarginItemList" type="MarginContainer" parent="MarginContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 44
-theme_override_constants/margin_right = 44
+theme_override_constants/margin_left = 39
+theme_override_constants/margin_right = 39
 theme_override_constants/margin_bottom = 40
 
-[node name="HBoxItemList" type="HBoxContainer" parent="MarginContainer/ColorRect/MarginContainer"]
+[node name="HBoxItemList" type="HBoxContainer" parent="MarginContainer/ColorRect/MarginItemList"]
 layout_mode = 2
 
-[node name="Nife" type="TextureRect" parent="MarginContainer/ColorRect/MarginContainer/HBoxItemList"]
+[node name="Apple2" parent="MarginContainer/ColorRect/MarginItemList/HBoxItemList" instance=ExtResource("2_w6bj8")]
 layout_mode = 2
-texture = ExtResource("4_48caf")
-expand_mode = 2
 
-[node name="Apple" type="TextureRect" parent="MarginContainer/ColorRect/MarginContainer/HBoxItemList"]
+[node name="Nife" parent="MarginContainer/ColorRect/MarginItemList/HBoxItemList" instance=ExtResource("4_58l7v")]
 layout_mode = 2
-texture = ExtResource("5_wu0gj")
-expand_mode = 2
+
+[node name="Apple" parent="MarginContainer/ColorRect/MarginItemList/HBoxItemList" instance=ExtResource("2_w6bj8")]
+layout_mode = 2
+
+[node name="Nife3" parent="MarginContainer/ColorRect/MarginItemList/HBoxItemList" instance=ExtResource("4_58l7v")]
+layout_mode = 2
+
+[node name="Apple3" parent="MarginContainer/ColorRect/MarginItemList/HBoxItemList" instance=ExtResource("2_w6bj8")]
+layout_mode = 2
+
+[node name="Nife2" parent="MarginContainer/ColorRect/MarginItemList/HBoxItemList" instance=ExtResource("4_58l7v")]
+layout_mode = 2
+
+[node name="Nife4" parent="MarginContainer/ColorRect/MarginItemList/HBoxItemList" instance=ExtResource("4_58l7v")]
+layout_mode = 2
+
+[node name="Apple5" parent="MarginContainer/ColorRect/MarginItemList/HBoxItemList" instance=ExtResource("2_w6bj8")]
+layout_mode = 2
+
+[node name="Apple4" parent="MarginContainer/ColorRect/MarginItemList/HBoxItemList" instance=ExtResource("2_w6bj8")]
+layout_mode = 2
 
 [node name="Circle" parent="MarginContainer/ColorRect" instance=ExtResource("3_sfjei")]
 layout_mode = 1

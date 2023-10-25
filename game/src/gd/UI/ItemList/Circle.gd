@@ -1,6 +1,6 @@
 extends Control
 
-const MARGIN_X:int = 125
+const MARGIN_X:int = 126
 const MIN_MARGIN_X = 0
 const MAX_MARGIN_X = 1000
 
