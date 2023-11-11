@@ -17,15 +17,13 @@ metadata/_edit_group_ = true
 
 [node name="Shadow" type="Sprite2D" parent="."]
 y_sort_enabled = true
-scale = Vector2(3, 3)
 texture = ExtResource("2_xnfeb")
 
 [node name="AnimatedWalk" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
-scale = Vector2(3, 3)
 sprite_frames = ExtResource("1_nwka1")
 animation = &"LeftWeight"
-frame_progress = 0.0972217
+frame_progress = 0.782953
 speed_scale = 7.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -34,6 +32,7 @@ scale = Vector2(1, 1.04)
 shape = SubResource("RectangleShape2D_skko3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 limit_left = -816
 limit_top = -288
 limit_right = 2256
