@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://t7oc7aiqut5p"]
+[gd_scene load_steps=8 format=3 uid="uid://t7oc7aiqut5p"]
 
 [ext_resource type="Texture2D" uid="uid://d30onfuk63i8g" path="res://tileSet/map.png" id="1_534kf"]
 [ext_resource type="Texture2D" uid="uid://cooalcimdxnjp" path="res://image/first_map.png" id="2_pkja0"]
 [ext_resource type="PackedScene" uid="uid://qe8fxyc1qbse" path="res://src/tscn/character/player.tscn" id="3_ln8ei"]
 [ext_resource type="PackedScene" uid="uid://wavanu37k4j5" path="res://src/tscn/character/test_npc.tscn" id="4_mww7d"]
-[ext_resource type="PackedScene" uid="uid://calkr3v72xwft" path="res://src/tscn/UI/ui.tscn" id="5_l0aob"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ynko1"]
 texture = ExtResource("1_534kf")
@@ -6184,5 +6183,3 @@ position = Vector2(-472, 1160)
 
 [node name="TestNpc2" parent="." instance=ExtResource("4_mww7d")]
 position = Vector2(-352, 1168)
-
-[node name="UI" parent="." instance=ExtResource("5_l0aob")]
