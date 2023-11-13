@@ -23,7 +23,7 @@ texture = ExtResource("2_xnfeb")
 y_sort_enabled = true
 sprite_frames = ExtResource("1_nwka1")
 animation = &"LeftWeight"
-frame_progress = 0.868392
+frame_progress = 0.254387
 speed_scale = 7.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
