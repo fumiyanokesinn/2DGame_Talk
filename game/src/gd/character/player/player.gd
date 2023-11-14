@@ -16,7 +16,7 @@ const ROTATION_BACK :int = 270
 const STOPPING :Vector2= Vector2(0.0,0.0)
 
 # 速度
-const SPEED :float = 4000.0
+@export var SPEED :float = 4000.0
 
 var direction:String = DIRECTION_BACK # キャラの方向
 var isConversation:bool = false # 会話フラグ
