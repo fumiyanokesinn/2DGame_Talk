@@ -13,7 +13,6 @@ y_sort_enabled = true
 position = Vector2(605.334, 418.333)
 collision_layer = 5
 script = ExtResource("1_rxcmj")
-SPEED = 6000.0
 metadata/_edit_group_ = true
 
 [node name="Shadow" type="Sprite2D" parent="."]
