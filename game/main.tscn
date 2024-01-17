@@ -7,6 +7,14 @@
 script = ExtResource("1_ptcg0")
 
 [node name="GDE_Sprite2D" type="GDE_Sprite2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
 position = Vector2(108.778, 600.18)
 scale = Vector2(1, 1.00432)
 texture = ExtResource("2_anr5o")
+script = null
